@@ -20,10 +20,7 @@ int s_func(va_list args)
 
 	str = va_arg(args, char *);
 	if (!str)
-    {
 		str = "(null)";
-        // count += 6;
-    }
 	while (str[i] != '\0')
 	{
 		count += ft_put_char(str[i]);
@@ -62,17 +59,18 @@ int d_func(va_list args)
 	count += ft_put_nbr(d);
 	return (count);
 }
-void	ft_put_hex(unsigned int n)
+int	ft_put_hex(unsigned int n)
 {
-	char			*hexa;
+	int count = 0;
+    char			*hexa;
 	unsigned int	x;
 
 	hexa = "0123456789abcdef";
 	if (n > 15)
-		ft_put_hex(n / 16);
+		count += ft_put_hex(n / 16);
 	x = hexa[n % 16];
-	ft_put_char(x);
-	return ;
+	count += ft_put_char(x);
+	return (count);
 }
 
 int x_func(va_list args)
@@ -81,7 +79,7 @@ int x_func(va_list args)
     unsigned int	x;
 
 	x = va_arg(args, unsigned int);
-	ft_put_hex(x);
+	count += ft_put_hex(x);
     return (count);
 }
 
@@ -98,17 +96,11 @@ int	ft_printf(const char	*input, ...)
 		{
 			i++;
             if (input[i] == 's')
-			{
 				count += s_func(args);
-			}
 			else if (input[i] == 'd')
-			{
 				count += d_func(args);
-			}
 			else if (input[i] == 'x')
-			{
 				count += x_func(args);
-			}
 		}
 		else
 			count += ft_put_char(input[i]);
@@ -123,11 +115,11 @@ int main(void)
     int	my_count = 0;
 	int st_count = 0;
 
-	// my_count = ft_printf("bonjour %s waaah\n", "123");
-	// st_count = printf("bonjour %s waaah\n", "123");
+	my_count = ft_printf("bonjour %s %s waaah\n", "123", NULL);
+	st_count = printf("bonjour %s %s waaah\n", "123", NULL);
 
-	my_count = ft_printf("%d, %d bonjour\n", -2147483647, 123);
-	st_count = printf("%d, %d bonjour\n", -2147483647, 123);
+	// my_count = ft_printf("%d, %d bonjour\n", -2147483647, 123);
+	// st_count = printf("%d, %d bonjour\n", -2147483647, 123);
 
 	// my_count = ft_printf("coucou %x bonjour\n", 123);
 	// st_count = printf("coucou %x bonjour\n", 123);
