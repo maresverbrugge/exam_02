@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_printf.c                                        :+:    :+:            */
+/*   arthur_printf.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/03 12:24:41 by abeznik       #+#    #+#                 */
-/*   Updated: 2022/04/07 15:04:37 by mverbrug      ########   odam.nl         */
+/*   Updated: 2022/04/13 13:44:55 by mverbrug      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,11 @@ int	main(void)
 	// count1 = ft_printf("bonjour %s\n", "123");
 	// count2 = printf("bonjour %s\n", "123");
 
-	// count1 = ft_printf("%d bonjour\n", 123);
-	// count2 = printf("%d bonjour\n", 123);
+	count1 = ft_printf("%d bonjour\n", -2147483648);
+	count2 = printf("%ld bonjour\n", -2147483648);
 
-	count1 = ft_printf("coucou %x bonjour\n", 123);
-	count2 = printf("coucou %x bonjour\n", 123);
+	// count1 = ft_printf("coucou %x bonjour\n", 123);
+	// count2 = printf("coucou %x bonjour\n", 123);
 	
 	printf("mine: %d vs original: %d\n", count1, count2);
 	return (0);
