@@ -100,8 +100,8 @@ int main(void)
 	// my_count = ft_printf("%d, %d bonjour\n", -2147483648, -3);
 	// st_count = printf("%ld, %d bonjour\n", -2147483648, -3);
 
-	my_count = ft_printf("coucou %x bonjour\n", 123);
-	st_count = printf("coucou %x bonjour\n", 123);
+	// my_count = ft_printf("coucou %x bonjour\n", 123);
+	// st_count = printf("coucou %x bonjour\n", 123);
 	
 	printf("my: %d\nst: %d\n", my_count, st_count);
 	return (0);

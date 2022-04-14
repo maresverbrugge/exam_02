@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/03 12:24:41 by abeznik       #+#    #+#                 */
-/*   Updated: 2022/04/13 13:44:55 by mverbrug      ########   odam.nl         */
+/*   Updated: 2022/04/14 10:22:48 by mverbrug      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	int	count1 =0;
+	int	count1 = 0;
 	int count2 = 0;
 
 	// count1 = ft_printf("bonjour %s\n", "123");
